@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Classical Cipher Encryption & Decryption</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="header-content">
+
+            <div class="logo">
+                🔐
+            </div>
+
+            <div>
+                <h1>Classical Cipher</h1>
+                <p>Encryption & Decryption Tool</p>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- MAIN -->
+
+    <main class="main-container">
+
+
+        <!-- INTRODUCTION -->
+
+        <section class="intro">
+
+            <h2>Classical Cryptography</h2>
+
+            <p>
+                This web application demonstrates classical cryptographic
+                techniques used to transform plaintext into ciphertext and
+                recover the original message through decryption.
+            </p>
+
+            <div class="cipher-tags">
+
+                <span>Additive Cipher</span>
+
+                <span>Multiplicative Cipher</span>
+
+                <span>Affine Cipher</span>
+
+            </div>
+
+        </section>
+
+
+        <!-- CIPHER TOOL -->
+
+        <section class="cipher-card">
+
+            <h2>🔐 Encryption & Decryption</h2>
+
+            <p class="card-description">
+                Select a cipher, enter your text and key, and perform
+                encryption or decryption.
+            </p>
+
+
+            <!-- CIPHER SELECTION -->
+
+            <div class="form-group">
+
+                <label for="cipher">
+                    Select Cipher
+                </label>
+
+                <select id="cipher" onchange="updateCipher()">
+
+                    <option value="additive">
+                        Additive Cipher
+                    </option>
+
+                    <option value="multiplicative">
+                        Multiplicative Cipher
+                    </option>
+
+                    <option value="affine">
+                        Affine Cipher
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- CIPHER DESCRIPTION -->
+
+            <div class="info-box">
+
+                <strong id="cipherTitle">
+                    Additive Cipher
+                </strong>
+
+                <p id="cipherDescription">
+                    Uses a shift key to move each letter by a fixed
+                    number of positions in the alphabet.
+                </p>
+
+                <div class="formula" id="formula">
+                    Encryption: C = (P + K) mod 26
+                </div>
+
+            </div>
+
+
+            <!-- INPUT -->
+
+            <div class="form-group">
+
+                <label for="inputText">
+                    Enter Text
+                </label>
+
+                <textarea
+                    id="inputText"
+                    placeholder="Enter plaintext for encryption or ciphertext for decryption..."
+                ></textarea>
+
+            </div>
+
+
+            <!-- KEY -->
+
+            <div class="key-container">
+
+                <div class="form-group">
+
+                    <label id="keyLabel" for="key">
+                        Enter Shift Key
+                    </label>
+
+                    <input
+                        type="number"
+                        id="key"
+                        placeholder="Example: 3"
+                    >
+
+                </div>
+
+
+                <!-- SECOND KEY -->
+
+                <div
+                    class="form-group hidden"
+                    id="secondKeyGroup"
+                >
+
+                    <label for="secondKey">
+                        Enter Second Key (b)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="secondKey"
+                        placeholder="Example: 8"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- BUTTONS -->
+
+            <div class="button-container">
+
+                <button
+                    class="encrypt-button"
+                    onclick="encryptText()"
+                >
+                    🔒 Encrypt
+                </button>
+
+
+                <button
+                    class="decrypt-button"
+                    onclick="decryptText()"
+                >
+                    🔓 Decrypt
+                </button>
+
+
+                <button
+                    class="clear-button"
+                    onclick="clearAll()"
+                >
+                    🗑 Clear
+                </button>
+
+            </div>
+
+
+            <!-- MESSAGE -->
+
+            <div id="message"></div>
+
+
+            <!-- RESULT -->
+
+            <div class="form-group">
+
+                <label for="result">
+                    Result
+                </label>
+
+                <textarea
+                    id="result"
+                    readonly
+                    placeholder="Your encrypted or decrypted text will appear here..."
+                ></textarea>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- HOW IT WORKS -->
+
+        <section class="how-section">
+
+            <h2>📚 How the Ciphers Work</h2>
+
+
+            <div class="method-card">
+
+                <h3>1. Additive Cipher</h3>
+
+                <p>
+                    Each letter is shifted by a fixed key value.
+                </p>
+
+                <div class="formula">
+                    Encryption: C = (P + K) mod 26
+                </div>
+
+                <div class="formula">
+                    Decryption: P = (C - K) mod 26
+                </div>
+
+            </div>
+
+
+            <div class="method-card">
+
+                <h3>2. Multiplicative Cipher</h3>
+
+                <p>
+                    Each letter value is multiplied by the key
+                    and reduced modulo 26.
+                </p>
+
+                <div class="formula">
+                    Encryption: C = (P × K) mod 26
+                </div>
+
+                <div class="formula">
+                    Decryption: P = C × K⁻¹ mod 26
+                </div>
+
+                <p class="note">
+                    The key must have a multiplicative inverse
+                    modulo 26.
+                </p>
+
+            </div>
+
+
+            <div class="method-card">
+
+                <h3>3. Affine Cipher</h3>
+
+                <p>
+                    The Affine Cipher combines multiplication and
+                    addition using two keys: a and b.
+                </p>
+
+                <div class="formula">
+                    Encryption: C = (aP + b) mod 26
+                </div>
+
+                <div class="formula">
+                    Decryption: P = a⁻¹(C - b) mod 26
+                </div>
+
+                <p class="note">
+                    The value of a must be relatively prime to 26.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROJECT INFORMATION -->
+
+        <section class="project-info">
+
+            <h2>🎓 Project Information</h2>
+
+            <div class="info-grid">
+
+                <div>
+                    <span>Subject</span>
+                    <strong>Cryptography & Network Security</strong>
+                </div>
+
+                <div>
+                    <span>Project</span>
+                    <strong>Classical Cipher Tool</strong>
+                </div>
+
+                <div>
+                    <span>Technologies</span>
+                    <strong>HTML, CSS, JavaScript</strong>
+                </div>
+
+                <div>
+                    <span>Developer</span>
+                    <strong>V Sushma</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 Classical Cipher Encryption & Decryption
+        </p>
+
+        <p>
+            Developed by <strong>V Sushma</strong>
+        </p>
+
+        <p>
+            CNS Mini Project | Computer Science & Engineering
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

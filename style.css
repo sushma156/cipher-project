@@ -1,0 +1,693 @@
+/* =========================================
+   GENERAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0f172a,
+            #1e3a5f
+        );
+
+    min-height: 100vh;
+
+    color: #1e293b;
+
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+
+    background: rgba(15, 23, 42, 0.95);
+
+    color: white;
+
+    padding: 22px 20px;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.25);
+
+}
+
+.header-content {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+}
+
+.logo {
+
+    width: 55px;
+
+    height: 55px;
+
+    background: #2563eb;
+
+    border-radius: 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 28px;
+
+}
+
+.header h1 {
+
+    font-size: 28px;
+
+    margin-bottom: 4px;
+
+}
+
+.header p {
+
+    color: #cbd5e1;
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================
+   MAIN
+========================================= */
+
+.main-container {
+
+    max-width: 900px;
+
+    margin: 40px auto;
+
+    padding: 0 20px;
+
+}
+
+
+/* =========================================
+   INTRO
+========================================= */
+
+.intro {
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    margin-bottom: 25px;
+
+    text-align: center;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.15);
+
+}
+
+.intro h2 {
+
+    color: #1e3a5f;
+
+    margin-bottom: 12px;
+
+}
+
+.intro p {
+
+    color: #64748b;
+
+    line-height: 1.7;
+
+    max-width: 700px;
+
+    margin: auto;
+
+}
+
+.cipher-tags {
+
+    margin-top: 20px;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+}
+
+.cipher-tags span {
+
+    background: #dbeafe;
+
+    color: #1d4ed8;
+
+    padding: 8px 14px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+}
+
+
+/* =========================================
+   CIPHER CARD
+========================================= */
+
+.cipher-card {
+
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.15);
+
+}
+
+.cipher-card h2 {
+
+    color: #1e3a5f;
+
+    margin-bottom: 8px;
+
+}
+
+.card-description {
+
+    color: #64748b;
+
+    margin-bottom: 25px;
+
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.form-group {
+
+    margin-bottom: 20px;
+
+}
+
+label {
+
+    display: block;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+
+    color: #334155;
+
+}
+
+select,
+input,
+textarea {
+
+    width: 100%;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 10px;
+
+    padding: 13px;
+
+    font-size: 16px;
+
+    font-family: inherit;
+
+    outline: none;
+
+    transition: 0.2s;
+
+}
+
+select:focus,
+input:focus,
+textarea:focus {
+
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.1);
+
+}
+
+textarea {
+
+    min-height: 140px;
+
+    resize: vertical;
+
+}
+
+
+/* =========================================
+   KEY SECTION
+========================================= */
+
+.key-container {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+
+}
+
+
+/* =========================================
+   INFO BOX
+========================================= */
+
+.info-box {
+
+    background: #eff6ff;
+
+    border-left: 5px solid #2563eb;
+
+    padding: 15px;
+
+    border-radius: 8px;
+
+    margin-bottom: 25px;
+
+}
+
+.info-box strong {
+
+    color: #1e40af;
+
+}
+
+.info-box p {
+
+    color: #475569;
+
+    margin-top: 6px;
+
+    line-height: 1.5;
+
+}
+
+.formula {
+
+    background: #e0e7ff;
+
+    color: #1e3a8a;
+
+    padding: 9px 12px;
+
+    border-radius: 7px;
+
+    margin-top: 10px;
+
+    font-family: monospace;
+
+    font-weight: bold;
+
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.button-container {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr 1fr;
+
+    gap: 12px;
+
+    margin: 25px 0;
+
+}
+
+button {
+
+    border: none;
+
+    padding: 14px;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    color: white;
+
+    transition:
+        transform 0.2s,
+        opacity 0.2s;
+
+}
+
+button:hover {
+
+    transform: translateY(-2px);
+
+    opacity: 0.9;
+
+}
+
+.encrypt-button {
+
+    background: #1d4ed8;
+
+}
+
+.decrypt-button {
+
+    background: #15803d;
+
+}
+
+.clear-button {
+
+    background: #64748b;
+
+}
+
+
+/* =========================================
+   MESSAGE
+========================================= */
+
+#message {
+
+    text-align: center;
+
+    font-weight: bold;
+
+    margin-bottom: 15px;
+
+    min-height: 20px;
+
+}
+
+
+/* =========================================
+   RESULT
+========================================= */
+
+#result {
+
+    background: #f8fafc;
+
+}
+
+
+/* =========================================
+   HIDDEN
+========================================= */
+
+.hidden {
+
+    display: none;
+
+}
+
+
+/* =========================================
+   HOW IT WORKS
+========================================= */
+
+.how-section {
+
+    margin-top: 25px;
+
+}
+
+.how-section > h2 {
+
+    color: white;
+
+    text-align: center;
+
+    margin-bottom: 20px;
+
+}
+
+.method-card {
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    margin-bottom: 15px;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.12);
+
+}
+
+.method-card h3 {
+
+    color: #1e3a5f;
+
+    margin-bottom: 10px;
+
+}
+
+.method-card p {
+
+    color: #64748b;
+
+    line-height: 1.6;
+
+}
+
+.note {
+
+    margin-top: 12px;
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================
+   PROJECT INFORMATION
+========================================= */
+
+.project-info {
+
+    background: white;
+
+    margin-top: 25px;
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.15);
+
+}
+
+.project-info h2 {
+
+    text-align: center;
+
+    color: #1e3a5f;
+
+    margin-bottom: 25px;
+
+}
+
+.info-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+
+}
+
+.info-grid div {
+
+    background: #f8fafc;
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+}
+
+.info-grid span {
+
+    display: block;
+
+    color: #64748b;
+
+    font-size: 13px;
+
+    margin-bottom: 5px;
+
+}
+
+.info-grid strong {
+
+    color: #1e293b;
+
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+
+    text-align: center;
+
+    padding: 30px 15px;
+
+    color: #cbd5e1;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+}
+
+footer strong {
+
+    color: white;
+
+}
+
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 650px) {
+
+    .main-container {
+
+        margin: 20px auto;
+
+        padding: 0 12px;
+
+    }
+
+    .header-content {
+
+        justify-content: center;
+
+    }
+
+    .header h1 {
+
+        font-size: 21px;
+
+    }
+
+    .header p {
+
+        font-size: 12px;
+
+    }
+
+    .logo {
+
+        width: 45px;
+
+        height: 45px;
+
+        font-size: 23px;
+
+    }
+
+    .intro,
+    .cipher-card,
+    .project-info {
+
+        padding: 22px;
+
+    }
+
+    .key-container {
+
+        grid-template-columns: 1fr;
+
+        gap: 0;
+
+    }
+
+    .button-container {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .info-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .cipher-tags {
+
+        flex-direction: column;
+
+    }
+
+    .cipher-tags span {
+
+        width: 100%;
+
+    }
+
+}
